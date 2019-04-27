@@ -12,6 +12,7 @@
 #include <iostream>
 #include <sstream>
 #include "afxlinkctrl.h"
+#include "getip.h"
 
 #define TRACE_MSG(msg)										\
 	{														\
@@ -132,25 +133,32 @@ BOOL WinMTRDialog::OnInitDialog()
 		AfxMessageBox("Error creating status bar");
 	statusBar.GetStatusBarCtrl().SetMinHeight(23);
 		
+
+	CString ip;
+	ip = GetNetIp();
+
+
 	UINT sbi[1];
 	sbi[0] = IDS_STRING_SB_NAME;	
 	statusBar.SetIndicators( sbi,1);
 	statusBar.SetPaneInfo(0, statusBar.GetItemID(0),SBPS_STRETCH, NULL );
 	{ // Add appnor URL
 		CMFCLinkCtrl* m_pWndButton = new CMFCLinkCtrl;
-		if (!m_pWndButton->Create(_T("www.appnor.com"), WS_CHILD|WS_VISIBLE|WS_TABSTOP, CRect(0,0,0,0), &statusBar, 1234)) {
+		if (!m_pWndButton->Create(_T(ip), WS_CHILD|WS_VISIBLE|WS_TABSTOP, CRect(0,0,0,0), &statusBar, 1234)) {
 			TRACE(_T("Failed to create button control.\n"));
 			return FALSE;
 		}
 
-		m_pWndButton->SetURL("http://www.appnor.com/?utm_source=winmtr&utm_medium=desktop&utm_campaign=software");
-			
+		m_pWndButton->SetURL("http://2019.ip138.com/ic.asp");
+	
+	
 		if(!statusBar.AddPane(1234,1)) {
 			AfxMessageBox(_T("Pane index out of range\nor pane with same ID already exists in the status bar"), MB_ICONERROR);
 			return FALSE;
 		}
 			
-		statusBar.SetPaneWidth(statusBar.CommandToIndex(1234), 100);
+		statusBar.SetPaneWidth(statusBar.CommandToIndex(1234), 400);
+	
 		statusBar.AddPaneControl(m_pWndButton, 1234, true);
 	}
 

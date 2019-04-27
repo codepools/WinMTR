@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 英语(美国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -65,22 +65,23 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "WinMTR.ico"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
 //
 
 IDD_WINMTR_DIALOG DIALOGEX 0, 0, 390, 193
-STYLE DS_SETFONT | DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-FONT 8, "MS Sans Serif", 0, 0, 0x1
+FONT 7, "MS Shell Dlg", 400, 0, 0x86
 BEGIN
     DEFPUSHBUTTON   "&Start",ID_RESTART,203,12,50,14,BS_FLAT
     PUSHBUTTON      "&Options",ID_OPTIONS,270,12,51,14,BS_FLAT
     PUSHBUTTON      "E&xit",IDCANCEL,328,12,49,14,BS_FLAT
     PUSHBUTTON      "&Copy Text to clipboard",ID_CTTC,14,39,89,14,BS_FLAT
     PUSHBUTTON      "Co&py HTML to clipboard",ID_CHTC,113,39,89,14,BS_FLAT
-    PUSHBUTTON      "Export &TEXT",ID_EXPT,270,39,51,14,BS_FLAT
+    PUSHBUTTON      "Export &TEXT",ID_EXPT,270,39,49,14,BS_FLAT
     PUSHBUTTON      "Export &HTML",ID_EXPH,328,39,49,14,BS_FLAT
     CONTROL         "List1",IDC_LIST_MTR,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,60,376,126
     LTEXT           "Host:",IDC_STATIC,13,12,20,13,SS_CENTERIMAGE
@@ -331,6 +332,17 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_WINMTR_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
@@ -342,7 +354,7 @@ BEGIN
     IDS_STRING_CLEAR_HISTORY "Clear History"
 END
 
-#endif    // English (United States) resources
+#endif    // 英语(美国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

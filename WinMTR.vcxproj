@@ -256,6 +256,7 @@
     <ResourceCompile Include="WinMTR.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="getip.cpp" />
     <ClCompile Include="WinMTRLicense.cpp" />
     <ClCompile Include="WinMTRStatusBar.cpp" />
     <ClCompile Include="WinMTRDialog.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="WinMTRNet.h" />
     <ClInclude Include="WinMTROptions.h" />
     <ClInclude Include="WinMTRProperties.h" />
+    <ClInclude Include="getip.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="WinMTR.ico" />
